@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitRoutine - Rutinas por Persona</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        .person-card {
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+        .person-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+        }
+        .day-card {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .day-header {
+            background-color: #e9ecef;
+            cursor: pointer;
+            padding: 12px 15px;
+            font-weight: bold;
+        }
+        .exercise-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        .exercise-item:hover {
+            background-color: #f8f9fa;
+        }
+        .exercise-item.completed {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .control-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .exercise-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .exercise-details {
+                flex-direction: column;
+            }
+            .exercise-controls {
+                margin-top: 10px;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Título Principal -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4"><i class="fas fa-dumbbell text-primary"></i> FitRoutine</h1>
+                <p class="lead">Seguimiento de rutinas personales</p>
+            </div>
+        </div>
+
+        <!-- Rutina de Alejandro -->
+        <div class="person-card">
+            <div class="person-header">
+                <i class="fas fa-user me-2"></i> Alejandro
+            </div>
+            <div class="card-body">
+                <!-- Lunes - Pecho -->
+                <div class="day-card">
+                    <div class="day-header" data-bs-toggle="collapse" href="#alejandroLunes">
+                        <i class="fas fa-calendar-day me-2"></i> LUNES - PECHO
+                        <span class="badge bg-secondary float-end">3 ejercicios</span>
+                    </div>
+                    <div class="collapse show" id="alejandroLunes">
+                        <div class="p-0">
+                            <!-- Ejercicio 1 -->
+                            <div class="exercise-item">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Press Banca Plano</h5>
+                                        <small class="text-muted">Última vez: 10/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="72.5">
+                                            <span class="input-group-text">kg</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <div class="input-group" style="width: 100px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="8">
+                                            <span class="input-group-text">reps</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <button class="btn btn-outline-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ejercicio 2 -->
+                            <div class="exercise-item completed">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Press Inclinado Mancuernas</h5>
+                                        <small class="text-muted">Última vez: 10/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="28.0">
+                                            <span class="input-group-text">kg</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <div class="input-group" style="width: 100px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="10">
+                                            <span class="input-group-text">reps</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <button class="btn btn-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ejercicio 3 -->
+                            <div class="exercise-item">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Aperturas con Mancuernas</h5>
+                                        <small class="text-muted">Última vez: 03/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="14.0">
+                                            <span class="input-group-text">kg</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <div class="input-group" style="width: 100px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="12">
+                                            <span class="input-group-text">reps</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <button class="btn btn-outline-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Martes - Espalda -->
+                <div class="day-card">
+                    <div class="day-header" data-bs-toggle="collapse" href="#alejandroMartes">
+                        <i class="fas fa-calendar-day me-2"></i> MARTES - ESPALDA
+                        <span class="badge bg-secondary float-end">4 ejercicios</span>
+                    </div>
+                    <div class="collapse" id="alejandroMartes">
+                        <div class="p-0">
+                            <!-- Ejercicios de espalda... -->
+                            <div class="exercise-item">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Dominadas</h5>
+                                        <small class="text-muted">Última vez: 11/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="0">
+                                            <span class="input-group-text">kg</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <div class="input-group" style="width: 100px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="8">
+                                            <span class="input-group-text">reps</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <button class="btn btn-outline-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Más ejercicios... -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Miércoles - Piernas -->
+                <div class="day-card">
+                    <div class="day-header" data-bs-toggle="collapse" href="#alejandroMiercoles">
+                        <i class="fas fa-calendar-day me-2"></i> MIÉRCOLES - PIERNAS
+                        <span class="badge bg-secondary float-end">3 ejercicios</span>
+                    </div>
+                    <div class="collapse" id="alejandroMiercoles">
+                        <div class="p-0">
+                            <!-- Ejercicios de piernas... -->
+                            <div class="exercise-item">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Sentadilla Libre</h5>
+                                        <small class="text-muted">Última vez: 12/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="85.0">
+                                            <span class="input-group-text">kg</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <div class="input-group" style="width: 100px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="8">
+                                            <span class="input-group-text">reps</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <button class="btn btn-outline-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Más ejercicios... -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rutina de Duncan -->
+        <div class="person-card">
+            <div class="person-header bg-success">
+                <i class="fas fa-user me-2"></i> Duncan
+            </div>
+            <div class="card-body">
+                <!-- Lunes - Full Body -->
+                <div class="day-card">
+                    <div class="day-header" data-bs-toggle="collapse" href="#duncanLunes">
+                        <i class="fas fa-calendar-day me-2"></i> LUNES - FULL BODY
+                        <span class="badge bg-secondary float-end">5 ejercicios</span>
+                    </div>
+                    <div class="collapse" id="duncanLunes">
+                        <div class="p-0">
+                            <!-- Ejercicio 1 -->
+                            <div class="exercise-item completed">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Burpees</h5>
+                                        <small class="text-muted">Última vez: 10/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="0">
+                                            <span class="input-group-text">kg</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <div class="input-group" style="width: 100px;">
+                                            <button class="btn btn-outline-secondary control-btn">-</button>
+                                            <input type="text" class="form-control text-center" value="15">
+                                            <span class="input-group-text">reps</span>
+                                            <button class="btn btn-outline-secondary control-btn">+</button>
+                                        </div>
+                                        <button class="btn btn-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Más ejercicios... -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Miércoles - Cardio -->
+                <div class="day-card">
+                    <div class="day-header" data-bs-toggle="collapse" href="#duncanMiercoles">
+                        <i class="fas fa-calendar-day me-2"></i> MIÉRCOLES - CARDIO
+                        <span class="badge bg-secondary float-end">3 ejercicios</span>
+                    </div>
+                    <div class="collapse" id="duncanMiercoles">
+                        <div class="p-0">
+                            <!-- Ejercicios de cardio... -->
+                            <div class="exercise-item">
+                                <div class="d-flex justify-content-between align-items-center exercise-details">
+                                    <div>
+                                        <h5 class="mb-1">Running</h5>
+                                        <small class="text-muted">Última vez: 12/06/2025</small>
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="input-group" style="width: 120px;">
+                                            <input type="text" class="form-control text-center" value="30">
+                                            <span class="input-group-text">min</span>
+                                        </div>
+                                        <div class="input-group" style="width: 120px;">
+                                            <input type="text" class="form-control text-center" value="8.5">
+                                            <span class="input-group-text">km/h</span>
+                                        </div>
+                                        <button class="btn btn-outline-success complete-btn">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Más ejercicios... -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para agregar nueva persona -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary btn-lg">
+                <i class="fas fa-user-plus me-2"></i>Agregar Persona
+            </button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

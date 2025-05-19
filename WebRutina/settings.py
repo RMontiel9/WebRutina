@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-f$pu&-ll+&wghbvl%kw%9wj9rxahl3mb2+*ah*&bk8q(a%ta%f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['34.203.182.113']
 
 """ IP ELASTICA 34.203.182.113 """
 
